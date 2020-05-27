@@ -6,7 +6,7 @@ import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-ic
 const Social = () => {
   return (
     <Container fluid={true}>
-      <ul className="social-links slideInRight">
+      <ul className="social-links fadeIn">
         <li>
           <a href="https://github.com/JoshTeflon" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub} />

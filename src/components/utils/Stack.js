@@ -47,7 +47,7 @@ class Stack extends React.Component {
               <div className="bar">
                 <span className="javascript"></span>
               </div>
-              <div className="percent">60%</div>
+              <div className="percent">65%</div>
             </Card>
 
             <Card>

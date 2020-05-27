@@ -17,7 +17,7 @@ const Home = (props) => {
             </div>
           </div>
           <div className="home-img">
-            <img className="img slideInRight" src={Freelancer} alt="Home Img" fluid />
+            <img className="img slideInRight" src={Freelancer} alt="Home Img" fluid="true" />
           </div>
         </div>
       </Container>

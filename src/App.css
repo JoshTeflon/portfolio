@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Gotu|Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 
 *{
   background: #1d1d1d;
@@ -75,7 +76,7 @@
 
 .contact-btn {
   border: 1px solid #10d9e0;
-  color: #10d9e0 !important;
+  color: #10d9e0;
   letter-spacing: 0.2rem;
   padding: 0.6rem 1.1rem;
   text-transform: uppercase;
@@ -85,6 +86,7 @@
   border: 1px solid #f54369;
   color: #f54369;
   transition: 0.4s;
+  text-decoration: none;
 }
 
   /* Contact Page Styles */
@@ -160,6 +162,7 @@
 
 .about-img {
   width: 150px;
+  height: auto;
   margin-left: 10%;
   margin-right: 3%;
   border-radius: 50%;
@@ -273,7 +276,7 @@
     width: 0%;
   }
   100%{
-    width: 60%
+    width: 65%
   }
 }
 @keyframes react {
@@ -302,31 +305,64 @@
   font-size: bold;
 }
 
+/* Project Page */
+.project-icon {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.fa-tools {
+  font-size: 11.5rem;
+  color: #f5f5f5;
+}
+
+.unavailable {
+  color: #f5f5f5;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'La Belle Aurore', 'Trebuchet MS', cursive;
+}
+
 /* Social Link Styles */
 .social-links {
+  position: fixed;
   top: 23rem;
-  position: absolute;
-  bottom: 2rem;
+  background: none;
   padding: 0;
   list-style: none;
 }
 
 .social-links li{
+  background: linear-gradient(-45deg, rgb(0,0,0), rgba(255,255,255, 0));
   font-size: large;
-  line-height: 2.2rem;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 .6rem 0;
+  border-radius: 50%;
+  box-shadow: 3px 3px 6px #000000, -3px -3px 5px rgba(73, 73, 73, 0.3);
+  cursor: pointer;
+}
+
+.social-links li:hover{
+  background: linear-gradient(135deg, rgb(0,0,0), rgba(255,255,255, 0));
 }
 
 .fa-github, .fa-linkedin, .fa-twitter {
   color: #646262;
+  background: none;
 }
 
-.fa-github:hover {
+.social-links li:hover .fa-github {
   color: #fdfbfb;
 }
-.fa-linkedin:hover {
+.social-links li:hover .fa-linkedin {
   color: #0077b5;
 }
-.fa-twitter:hover {
+.social-links li:hover .fa-twitter {
   color: #1da1f2;
 }
 
@@ -335,8 +371,23 @@ footer {
   border-top: 2px solid #181818;
 }
 
-.footer-mail, .footer-name, .footer-mail-img {
+.footer-mail, .footer-name {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.footer-name{
+  margin-top: -0.6rem;
+}
+
+.fa-envelope {
+  margin-top: 0.3rem;
+  color: #646262;
+}
+
+.footer-mail p {
+  padding: 0 0 0 0.5rem;
+  color: #646262;
+  cursor: default;
 }
 
 .footer-name {
@@ -346,21 +397,10 @@ footer {
   letter-spacing: 1px;
 }
 
-a {
-  color: #646262 !important;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #f54369 !important;
-  text-decoration: none !important;
-}
-
 /* Animations */
 .slideInLeft {
   animation: slideInLeft 1.5s;
 }
-
 @keyframes slideInLeft {
   from {
     transform: translate3d(-100%, 0, 0);
@@ -374,7 +414,6 @@ a:hover {
 .slideInRight {
   animation: slideInRight 1.5s;
 }
-
 @keyframes slideInRight {
   from {
     transform: translate3d(100%, 0, 0);
@@ -382,6 +421,18 @@ a:hover {
   }
   to {
     transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 4s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -399,6 +450,10 @@ a:hover {
 
 .home-img {
   padding: 1rem !important;
+}
+
+.unavailable h1{
+  margin: 0 2rem 0 2.5rem;
 }
 }
 

@@ -1,14 +1,16 @@
 import React from 'react';
 
-import Gmail from './images/Gmail.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 
 
 const Footer = () => {
   return (
-    <footer className="mt-4 p-3">
-      <div className="footer-mail mr-3 mb-2 d-flex justify-content-end">
-        <img className="footer-mail-img mr-2" src={Gmail} alt="Gmail" style={{width: '25px', height: 'auto'}} />
-        <a href="/contact">jenikele21h@gmail.com</a>
+    <footer className="mt-4 p-2">
+      <div className="footer-mail mr-2 d-flex justify-content-end">
+        <FontAwesomeIcon icon={faEnvelope} />
+        <p>jenikele21h@gmail.com</p>
       </div>
       <div className="footer-name mr-3 d-flex justify-content-end">
         JOSHTEFLON © 2020
