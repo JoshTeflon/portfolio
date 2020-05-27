@@ -8,7 +8,7 @@ const Projects = (props) => {
   return (
     <div>
       <Hero title={props.title} />
-      <div className="project=icon">
+      <div className="project-icon">
         <FontAwesomeIcon icon={faTools} />
       </div>
       <div className="unavailable">
