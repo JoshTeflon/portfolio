@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Navbar from './components/utils/Navbar';
 import Footer from './components/utils/Footer';
@@ -44,7 +44,7 @@ import './App.css';
     render() {
       return (
         <React.Fragment>
-          <Router>
+          <Router basename="/">
             <Navbar />
             <Switch>
               <Route path="/" exact render={() => <Home intro={this.state.home.intro} title={this.state.home.title} subTitle={this.state.home.subTitle} />} />

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import { Container } from "react-bootstrap";
 import Hero from "../utils/Hero";
 
@@ -13,7 +15,7 @@ const Home = (props) => {
           <div className="home-info">
             <Hero title={props.title} intro={props.intro} subTitle={props.subTitle} />
             <div className="d-flex justify-content-center">
-            <a className="contact-btn bg-transparent slideInLeft" href="/contact">Contact Me</a>
+            <Link className="contact-btn bg-transparent slideInLeft" to="/contact">Contact Me</Link>
             </div>
           </div>
           <div className="home-img">
