@@ -5,9 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTools } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = (props) => {
+    const { title } = props;
   return (
     <div>
-      <Hero title={props.title} />
+      <Hero title={title} />
       <div className="project-icon">
         <FontAwesomeIcon icon={faTools} />
       </div>

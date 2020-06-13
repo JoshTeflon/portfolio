@@ -69,9 +69,8 @@
 }
 
   /* Home Styles */
-.jumbotron {
-  margin-bottom: 0 !important;
-  padding: 0 !important;
+div.jumbotron {
+  margin-bottom: 0;
 }
 
 .contact-btn {
@@ -90,19 +89,25 @@
 }
 
   /* Contact Page Styles */
-.form-control, .button {
-  border-radius: 0 !important;
+form .form-control {
+  border-radius: 0;
 }
 
-.form-control {
-  background: #1d1d1d !important;
-  color: #b1b1b1 !important;
-  border: 2px solid #181818 !important;
+form .button {
+  font-size: 0.8rem;
+  border-radius: 0;
 }
 
-.form-control:focus {
-  box-shadow: none !important;
-  border: 2px solid #10d9e0 !important;
+textarea.form-control, input.form-control {
+  background: #1d1d1d;
+  color: #b1b1b1;
+  border: 2px solid #181818;
+}
+
+textarea.form-control:focus, input.form-control:focus {
+  background: none;
+  box-shadow: none;
+  border-color: #10d9e0;
   transition: 2s;
 }
 
@@ -111,18 +116,18 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.button {
-  font-size: 13px !important;
-}
-
 .success-msg {
   color: #57A773;
   padding: 10px 15px;
 }
 
 .error-msg {
-  color: #EE6352;
+  color: #eb2323;
   padding: 10px 15px;
+}
+
+.validate-error {
+  color: #eb2323;
 }
 
 /* Home Page Styles */
@@ -457,8 +462,8 @@ footer {
 }
 
 @media screen and (min-width: 576px){
-.jumbotron {
-  padding: 2rem 1rem !important;
+div.jumbotron {
+  padding: 2rem 1rem;
 }
 }
 

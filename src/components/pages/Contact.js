@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
@@ -9,13 +9,16 @@ import { Button } from 'react-bootstrap';
 import Hero from '../utils/Hero'
 
 
-class Contact extends React.Component {
+class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       name: '',
       email: '',
       message: '',
+      nameError: '',
+      emailError: '',
+      messageError: '',
       disabled: false,
       emailSent: null,
     }
@@ -35,14 +38,17 @@ class Contact extends React.Component {
     event.preventDefault();
 
     this.setState({
+
       disabled: true
     });
   }
 
   render() { 
+      const { title } = this.props;
+      const { name, nameError, email, message, disabled, emailSent } = this.state;
     return (
       <div>
-        <Hero title={this.props.title} />
+        <Hero title={title} />
         <Container fluid={true}>
           <Row className="justify-content-center">
             <Col md={6}>
@@ -53,11 +59,12 @@ class Contact extends React.Component {
                     id="fullname"
                     name="name"
                     type="text"
-                    value={this.state.name}
+                    value={name}
                     onChange={this.handleChange}
                     required
                   />
                 </Form.Group>
+                <div className="validate-error">{nameError}</div>
 
                 <Form.Group className="slideInRight">
                   <Form.Label htmlFor="email">Email</Form.Label>
@@ -65,11 +72,12 @@ class Contact extends React.Component {
                     id="email"
                     name="email"
                     type="email"
-                    value={this.state.email}
+                    value={email}
                     onChange={this.handleChange}
                     required
                   />
                 </Form.Group>
+                <div className="validate-error">{nameError}</div>
 
                 <Form.Group className="slideInRight">
                   <Form.Label htmlFor="fullname">Message</Form.Label>
@@ -78,24 +86,25 @@ class Contact extends React.Component {
                     name="message"
                     as="textarea"
                     rows="3"
-                    value={this.state.message}
+                    value={message}
                     onChange={this.handleChange}
                     required
                   />
                 </Form.Group>
+                <div className="validate-error">{nameError}</div>
 
                 <Button
                   className="d-inline-block button slideInLeft"
                   type="submit"
                   variant="primary"
-                  disabled={this.state.disabled}>
+                  disabled={disabled}>
                   SEND
                 </Button>
 
-                {this.state.emailSent === true && (
+                {emailSent === true && (
                   <p className="d-inline success-msg">Email Sent</p>
                 )}
-                {this.state.emailSent === false && (
+                {emailSent === false && (
                   <p className="d-inline error-msg">Email Not Sent</p>
                 )}
               </Form>

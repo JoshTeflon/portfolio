@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 
@@ -15,7 +15,7 @@ import './App.css';
 
   const hashHistory = createBrowserHistory();
 
-  class App extends React.Component {
+  class App extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -45,15 +45,16 @@ import './App.css';
     }
 
     render() {
+        const { home, about, projects, contact } = this.state;
       return (
         <React.Fragment>
           <Router basename="/" history={hashHistory}>
             <Navbar />
             <Switch>
-              <Route path="/" exact render={() => <Home intro={this.state.home.intro} title={this.state.home.title} subTitle={this.state.home.subTitle} />} />
-              <Route path="/about" render={() => <About title={this.state.about.title} />} />
-              <Route path="/projects" render={() => <Projects title={this.state.projects.title} />} />
-              <Route path="/contact" render={() => <Contact title={this.state.contact.title} />} />
+              <Route path="/" exact render={() => <Home intro={home.intro} title={home.title} subTitle={home.subTitle} />} />
+              <Route path="/about" render={() => <About title={about.title} />} />
+              <Route path="/projects" render={() => <Projects title={projects.title} />} />
+              <Route path="/contact" render={() => <Contact title={contact.title} />} />
             </Switch>
           </Router>
           <Social />

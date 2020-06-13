@@ -9,8 +9,6 @@ class Stack extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 0,
-      title: "Stack",
       subTitle: "Langauges I Speak"
     };
   }

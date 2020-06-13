@@ -8,9 +8,10 @@ import AboutImg from "../utils/images/aboutJosh.JPG";
 
 
 const About = (props) => {
+    const { title } = props;
   return (
     <Container fluid={true}>
-      <Hero title={props.title} />
+      <Hero title={title} />
       <div className="about">
         <div className="about-text-img">
           <img className="about-img slideInRight" src={AboutImg} alt="About Img"/>
