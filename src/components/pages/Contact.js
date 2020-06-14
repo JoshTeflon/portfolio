@@ -80,7 +80,7 @@ class Contact extends Component {
                 <div className="validate-error">{nameError}</div>
 
                 <Form.Group className="slideInRight">
-                  <Form.Label htmlFor="fullname">Message</Form.Label>
+                  <Form.Label htmlFor="message">Message</Form.Label>
                   <Form.Control
                     id="message"
                     name="message"
