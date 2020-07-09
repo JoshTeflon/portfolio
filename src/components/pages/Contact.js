@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import emailjs from "emailjs-com";
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
@@ -16,9 +17,6 @@ class Contact extends Component {
       name: '',
       email: '',
       message: '',
-      nameError: '',
-      emailError: '',
-      messageError: '',
       disabled: false,
       emailSent: null,
     }
@@ -37,15 +35,28 @@ class Contact extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    this.setState({
-
-      disabled: true
-    });
+    emailjs
+      .sendForm("gmail", "teflontemplate", event.target, "user_ZHCl7e3FGIxgOGnf3dV6I")
+      .then(result => {
+          console.log(result.text);
+          this.setState({
+            emailSent: true,
+            disabled: false
+          });
+        })
+      .catch(error => {
+          console.log(error.text);
+          this.setState({ 
+            emailSent: false, 
+            disabled: false 
+          });
+        }
+      );
   }
 
   render() { 
       const { title } = this.props;
-      const { name, nameError, email, message, disabled, emailSent } = this.state;
+      const { name, email, message, disabled, emailSent } = this.state;
     return (
       <div>
         <Hero title={title} />
@@ -64,7 +75,6 @@ class Contact extends Component {
                     required
                   />
                 </Form.Group>
-                <div className="validate-error">{nameError}</div>
 
                 <Form.Group className="slideInRight">
                   <Form.Label htmlFor="email">Email</Form.Label>
@@ -77,7 +87,6 @@ class Contact extends Component {
                     required
                   />
                 </Form.Group>
-                <div className="validate-error">{nameError}</div>
 
                 <Form.Group className="slideInRight">
                   <Form.Label htmlFor="message">Message</Form.Label>
@@ -91,7 +100,6 @@ class Contact extends Component {
                     required
                   />
                 </Form.Group>
-                <div className="validate-error">{nameError}</div>
 
                 <Button
                   className="d-inline-block button slideInLeft"

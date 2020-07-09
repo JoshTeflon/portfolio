@@ -118,16 +118,14 @@ textarea.form-control:focus, input.form-control:focus {
 
 .success-msg {
   color: #57A773;
-  padding: 10px 15px;
+  padding: 10px 20px;
+  margin-left: 5px;
 }
 
 .error-msg {
   color: #eb2323;
-  padding: 10px 15px;
-}
-
-.validate-error {
-  color: #eb2323;
+  padding: 10px 20px;
+  margin-left: 5px;
 }
 
 /* Home Page Styles */
