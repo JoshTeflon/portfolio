@@ -34,21 +34,21 @@ class Contact extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    
+    this.setState({
+      disabled: true,
+    });
 
     emailjs
       .sendForm("gmail", "teflontemplate", event.target, "user_ZHCl7e3FGIxgOGnf3dV6I")
       .then(result => {
-          console.log(result.text);
           this.setState({
             emailSent: true,
-            disabled: false
           });
         })
       .catch(error => {
-          console.log(error.text);
           this.setState({ 
             emailSent: false, 
-            disabled: false 
           });
         }
       );
@@ -100,6 +100,7 @@ class Contact extends Component {
                     required
                   />
                 </Form.Group>
+
 
                 <Button
                   className="d-inline-block button slideInLeft"

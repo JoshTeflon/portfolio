@@ -6,7 +6,7 @@ import { Navbar } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 
 
-import teflon from '../utils/images/Teflon.png';
+import teflon from '../utils/images/JoshTeflon.png';
 
 const NavBar = () =>{
     return (
